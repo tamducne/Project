@@ -9,18 +9,20 @@
 
 <section id="product">
     <div class="row">
-
         <div class="col-md-2 mb-sm-5">
             <ul class="list-group">
-                <c:forEach items="${listDepartment}" var="department">
-                    <li class="list-group-item">${department.name}
-                    
+                <c:forEach items="${listDepartment}" var = "department">
+                  
+                    <li class="list-group-item" onclick="submitForm(this)">
+                        ${department.name}
+                        <form action="home?action=department" method="POST">
+                            <input type="hidden" name="id" value="${department.id}">
+                        </form>
                     </li>
-
                 </c:forEach>
- 
             </ul>
         </div>
+
         <!-- Product details -->
         <div class="col-md-10 product-details">
             <!-- First row -->
@@ -30,11 +32,11 @@
                     <!-- First product - first row -->
                     <div class="col-lg-4 mb-md-5 ">
                         <div class="card h-100">
-                            <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." class="card-img-top">
+                            <img src="${o.image}" alt="..." class="card-img-top">
                             <div class="card-body">
                                 <div class="text-center">
                                     <h5 class="card-title">${o.name}</h5>
-                                    ${o.price} $
+                                    ${o.description} 
                                 </div>
                             </div>
 
@@ -55,3 +57,13 @@
         </div>
     </div>
 </section>
+            <script>
+    function submitForm(clickedLi) {
+        // Tìm form cha của thẻ li được nhấp
+        var form = clickedLi.querySelector('form');
+        if (form) {
+            // Submit form
+            form.submit();
+        }
+    }
+</script>

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.project.dal;
+package com.project.project1.dal;
 
 import java.sql.*;
 
@@ -11,7 +11,10 @@ import java.sql.*;
  * @author TAMDUC
  */
 public class DBcontext {
-     protected Connection connection;
+    protected Connection connection;
+    protected PreparedStatement statement;
+    protected  ResultSet resultSet;
+    
 
     /**
      * get an connection

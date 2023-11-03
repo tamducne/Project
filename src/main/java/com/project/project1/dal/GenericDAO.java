@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.project.dal;
+package com.project.project1.dal;
+import com.project.project1.entity.Doctor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.PreparedStatement;
@@ -15,8 +16,10 @@ import java.util.Map;
 /**
  *
  * @author TAMDUC
+ * @param <T>
  */
 public abstract class GenericDAO<T> extends DBcontext{
+    
 
     protected PreparedStatement statement;
     protected ResultSet resultSet;
@@ -559,4 +562,7 @@ public abstract class GenericDAO<T> extends DBcontext{
     
     public abstract List<T> findAll();
 
+   public abstract int insert(T t);
+
+    
 }

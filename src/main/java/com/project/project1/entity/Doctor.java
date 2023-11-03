@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.project.entity;
+package com.project.project1.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +27,8 @@ import lombok.ToString;
 public class Doctor {
     private int id;
     private String name;
-    private String department;
+    private String image;
+    private String description;
     private int departmentid;
     private int price;
      
